@@ -9,6 +9,8 @@
  * 
  * @author: Jack Doyle, jack@greensock.com
  */
+var window = global.parent || {} , navigator = { userAgent: "" } , dummyElement = { style: {}, getElementsByTagName: function() { return [] } } , document = global.document || { createElement: function() { return dummyElement } }
+
 var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(global) !== "undefined") ? global : this || window; //helps ensure compatibility with AMD/RequireJS and CommonJS/Node
 (_gsScope._gsQueue || (_gsScope._gsQueue = [])).push( function() {
 
@@ -1284,3 +1286,4 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		module.exports = getGlobal();
 	}
 }("TimelineMax"));
+module.exports = TimelineMax;
